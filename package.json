@@ -1,0 +1,10 @@
+{
+  "name": "nest-aws",
+  "scripts": {
+    "build": "lerna run build",
+    "publish": "lerna run publish"
+  },
+  "dependencies": {
+    "lerna": "^8.0.1"
+  }
+}
