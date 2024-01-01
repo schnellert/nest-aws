@@ -1,0 +1,41 @@
+{
+  "name": "@schnellert/nest-aws-cognito",
+  "version": "1.0.3",
+  "description": "Simple nest cognito identity provider client",
+  "author": "Felix Schnellert, <me@schnellert.dev>",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/felix-schnellert/nest-aws.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "nestjs",
+    "aws",
+    "cognito"
+  ],
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "publish": "npm publish --no-git-checks"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.484.0",
+    "@golevelup/nestjs-common": "^2.0.0",
+    "@golevelup/nestjs-modules": "^0.7.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.x",
+    "@nestjs/core": "^10.x",
+    "reflect-metadata": "^0.1.x",
+    "rxjs": "7.8.x"
+  }
+}
