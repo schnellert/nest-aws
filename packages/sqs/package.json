@@ -1,7 +1,7 @@
 {
   "name": "@schnellert/nest-aws-sqs",
-  "version": "1.0.0",
-  "description": "Simple nest sqs client",
+  "version": "1.0.1",
+  "description": "Simple nest aws sqs client",
   "author": "Felix Schnellert, <me@schnellert.dev>",
   "license": "MIT",
   "repository": {

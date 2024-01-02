@@ -1,1 +1,1 @@
-export const SQS_CLIENT = Symbol("SQS_CLIENT");
+export const AWS_SQS_CLIENT = Symbol("AWS_SQS_CLIENT");

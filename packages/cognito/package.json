@@ -1,6 +1,6 @@
 {
   "name": "@schnellert/nest-aws-cognito",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple nest cognito identity provider client",
   "author": "Felix Schnellert, <me@schnellert.dev>",
   "license": "MIT",

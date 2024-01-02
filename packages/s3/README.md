@@ -24,12 +24,12 @@ Simple nest aws s3 client
 ### Example 'forRoot'
 
 ```typescript
-import { S3Module } from "@schnellert/nest-aws-s3";
+import { AwsS3Module } from "@schnellert/nest-aws-s3";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
-    S3Module.forRoot(S3Module, {
+    AwsS3Module.forRoot(AwsS3Module, {
       credentials: {
         secretAccessKey: "<secretAccessKey>",
         accessKeyId: "<accessKeyId>",
@@ -44,13 +44,13 @@ export class AppModule {}
 
 ```typescript
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { S3Module } from "@schnellert/nest-aws-s3";
+import { AwsS3Module } from "@schnellert/nest-aws-s3";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    S3Module.forRootAsync(S3Module, {
+    AwsS3Module.forRootAsync(AwsS3Module, {
       useFactory: (configService: ConfigService) => {
         return {
           credentials: {
@@ -66,16 +66,16 @@ import { Module } from "@nestjs/common";
 export class AppModule {}
 ```
 
-### Inject s3 client:
+### Inject aws s3 client:
 
 ```typescript
 import { S3Client } from "@aws-sdk/client-s3";
-import { InjectS3Client } from "@schnellert/nest-aws-s3";
+import { InjectAwsS3Client } from "@schnellert/nest-aws-s3";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
-  constructor(@InjectS3Client() private readonly client: S3Client) {
+  constructor(@InjectAwsS3Client() private readonly client: S3Client) {
     // ...
   }
 }

@@ -24,12 +24,12 @@ Simple nest aws ses client
 ### Example 'forRoot'
 
 ```typescript
-import { SESModule } from "@schnellert/nest-aws-ses";
+import { AwsSESModule } from "@schnellert/nest-aws-ses";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
-    SESModule.forRoot(SESModule, {
+    AwsSESModule.forRoot(AwsSESModule, {
       credentials: {
         secretAccessKey: "<secretAccessKey>",
         accessKeyId: "<accessKeyId>",
@@ -44,13 +44,13 @@ export class AppModule {}
 
 ```typescript
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { SESModule } from "@schnellert/nest-aws-ses";
+import { AwsSESModule } from "@schnellert/nest-aws-ses";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    SESModule.forRootAsync(SESModule, {
+    AwsSESModule.forRootAsync(AwsSESModule, {
       useFactory: (configService: ConfigService) => {
         return {
           credentials: {
@@ -66,16 +66,16 @@ import { Module } from "@nestjs/common";
 export class AppModule {}
 ```
 
-### Inject ses client:
+### Inject aws ses client:
 
 ```typescript
 import { SESClient } from "@aws-sdk/client-ses";
-import { InjectS3Client } from "@schnellert/nest-aws-ses";
+import { InjectAwsSESClient } from "@schnellert/nest-aws-ses";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
-  constructor(@InjectSESClient() private readonly client: SESClient) {
+  constructor(@InjectAwsSESClient() private readonly client: SESClient) {
     // ...
   }
 }

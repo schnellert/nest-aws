@@ -1,4 +1,4 @@
 import { makeInjectableDecorator } from "@golevelup/nestjs-common";
-import { SES_CLIENT } from "./ses.constants";
+import { AWS_SES_CLIENT } from "./ses.constants";
 
-export const InjectSESClient = makeInjectableDecorator(SES_CLIENT);
+export const InjectAwsSESClient = makeInjectableDecorator(AWS_SES_CLIENT);

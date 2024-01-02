@@ -1,1 +1,1 @@
-export const S3_CLIENT = Symbol("S3_CLIENT");
+export const AWS_S3_CLIENT = Symbol("AWS_S3_CLIENT");

@@ -24,12 +24,12 @@ Simple nest aws sqs client
 ### Example 'forRoot'
 
 ```typescript
-import { SQSModule } from "@schnellert/nest-aws-sqs";
+import { AwsSQSModule } from "@schnellert/nest-aws-sqs";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
-    SQSModule.forRoot(SQSModule, {
+    AwsSQSModule.forRoot(AwsSQSModule, {
       credentials: {
         secretAccessKey: "<secretAccessKey>",
         accessKeyId: "<accessKeyId>",
@@ -44,13 +44,13 @@ export class AppModule {}
 
 ```typescript
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { SQSModule } from "@schnellert/nest-aws-sqs";
+import { AwsSQSModule } from "@schnellert/nest-aws-sqs";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    SQSModule.forRootAsync(SQSModule, {
+    AwsSQSModule.forRootAsync(AwsSQSModule, {
       useFactory: (configService: ConfigService) => {
         return {
           credentials: {
@@ -66,16 +66,16 @@ import { Module } from "@nestjs/common";
 export class AppModule {}
 ```
 
-### Inject sqs client:
+### Inject aws sqs client:
 
 ```typescript
 import { SQSClient } from "@aws-sdk/client-sqs";
-import { InjectSQSClient } from "@schnellert/nest-aws-sqs";
+import { InjectAwsSQSClient } from "@schnellert/nest-aws-sqs";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
-  constructor(@InjectSQSClient() private readonly client: SQSClient) {
+  constructor(@InjectAwsSQSClient() private readonly client: SQSClient) {
     // ...
   }
 }

@@ -1,6 +1,6 @@
 # @schnellert/nest-aws-cognito
 
-Simple nest cognito identity provider client
+Simple nest aws cognito identity provider client
 
 ## Getting started
 
@@ -29,7 +29,7 @@ import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
-    CognitoModule.forRoot(CognitoModule, {
+    AwsCognitoModule.forRoot(AwsCognitoModule, {
       credentials: {
         secretAccessKey: "<secretAccessKey>",
         accessKeyId: "<accessKeyId>",
@@ -44,13 +44,13 @@ export class AppModule {}
 
 ```typescript
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { CognitoModule } from "@schnellert/nest-aws-cognito";
+import { AwsCognitoModule } from "@schnellert/nest-aws-cognito";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    CognitoModule.forRootAsync(CognitoModule, {
+    AwsCognitoModule.forRootAsync(AwsCognitoModule, {
       useFactory: (configService: ConfigService) => {
         return {
           credentials: {
@@ -66,18 +66,18 @@ import { Module } from "@nestjs/common";
 export class AppModule {}
 ```
 
-### Inject cognito identity provider client:
+### Inject aws cognito identity provider client:
 
 ```typescript
-import { CognitoIdentityProviderClient } from "@aws-sdk/client-cognito-identity-provider";
-import { InjectCognitoIdentityProviderClient } from "@schnellert/nest-aws-cognito";
+import { AwsCognitoIdentityProviderClient } from "@aws-sdk/client-cognito-identity-provider";
+import { InjectAwsCognitoIdentityProviderClient } from "@schnellert/nest-aws-cognito";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
   constructor(
-    @InjectCognitoIdentityProviderClient()
-    private readonly client: CognitoIdentityProviderClient
+    @InjectAwsCognitoIdentityProviderClient()
+    private readonly client: AwsCognitoIdentityProviderClient
   ) {
     // ...
   }

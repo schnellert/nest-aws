@@ -1,7 +1,7 @@
 {
   "name": "@schnellert/nest-aws-s3",
-  "version": "1.0.6",
-  "description": "Simple nest s3 client",
+  "version": "1.0.7",
+  "description": "Simple nest aws s3 client",
   "author": "Felix Schnellert, <me@schnellert.dev>",
   "license": "MIT",
   "repository": {

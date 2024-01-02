@@ -1,4 +1,4 @@
 import { makeInjectableDecorator } from "@golevelup/nestjs-common";
-import { SQS_CLIENT } from "./sqs.constants";
+import { AWS_SQS_CLIENT } from "./sqs.constants";
 
-export const InjectSQSClient = makeInjectableDecorator(SQS_CLIENT);
+export const InjectAwsSQSClient = makeInjectableDecorator(AWS_SQS_CLIENT);
